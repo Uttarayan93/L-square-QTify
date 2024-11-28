@@ -8,10 +8,6 @@ import styles from "./navbar.module.css";
 const Navbar = ({ data, page, songsData }) => {
   const [isFeedbackClicked, setIsFeedbackClicked] = useState(false);
 
-  const handleClick = () => {
-    setIsFeedbackClicked(!isFeedbackClicked);
-  };
-
   useEffect(() => {
     let feedback = document.getElementById("feedback");
     let body = document.body;
@@ -23,6 +19,10 @@ const Navbar = ({ data, page, songsData }) => {
       feedback?.classList.remove("feedbackClicked");
     }
   }, [isFeedbackClicked]);
+
+  const handleClick = () => {
+    setIsFeedbackClicked(!isFeedbackClicked);
+  };
 
   return (
     <>
